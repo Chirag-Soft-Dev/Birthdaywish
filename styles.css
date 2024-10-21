@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e3e8;
+    /* background-image: url('back.jpeg'); */
+    /* background-size: cover; */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fcb69f); */
+    background-size: 100% 100%;
+    animation: gradientBackground 10s ease infinite;
+    z-index: -1;
+}
+
+.container {
+    text-align: center; 
+    position: relative;
+    z-index: 1;
+}
+
+/* Side images */
+.image-left, .image-right {
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    z-index: 1;
+}
+
+.image-left {
+    left: -180px; /* Positioning outside the container */
+}
+
+.image-right {
+    right: -180px; /* Positioning outside the container */
+}
+
+.side-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pic{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
+
+.heading {
+    font-size: 4rem;
+    color: #ff6f91;
+    animation: bounceIn 1.5s ease-out;
+}
+
+.message {
+    font-size: 1.8rem;
+    color: #ff6f91;
+    margin: 1.5rem 0;
+    animation: fadeInUp 2s ease-out;
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.balloon {
+    width: 70px;
+    height: 100px;
+    background-color: #ff6f91;
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    margin: 0 15px;
+    animation: float 5s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #333;
+}
+
+.balloon1 {
+    background-color: #ffcc29;
+    animation-delay: 0.5s;
+}
+
+.balloon2 {
+    background-color: #ff6f91;
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    background-color: #55d8c1;
+    animation-delay: 1.5s;
+}
+
+.surprise-btn {
+    padding: 10px 20px;
+    background-color: #ff6f91;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-out;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Keyframes for animations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Confetti Animation */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

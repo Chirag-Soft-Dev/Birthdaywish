@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories with My Sister</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e3e8;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fcb69f);
+    z-index: -1;
+    transition: transform 0.5s ease-out;
+}
+
+.gallery-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.gallery-heading {
+    font-size: 5rem;
+    color: #ff6f91;
+    margin-bottom: 2rem;
+    animation: slideInDown 1s ease-out;
+}
+
+.images-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.image-card {
+    width: 280px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.image-card img {
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.1);
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.paragraph-section {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.story-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+<body>
+    <div class="background-effect"></div>
+    <div class="gallery-container">
+        <h1 class="gallery-heading">Beautiful Memories with My Sister</h1>
+
+        <div class="images-section">
+            <div class="image-card">
+                <img src="mem1 (2).jpeg" alt="Me and My Sister">
+                <p class="image-caption">"On her last birthday, we laughed uncontrollably as we surprised her with a cake fight, turning a simple celebration into a joyful, messy memory we'll never forget!"</p>
+            </div>
+            <div class="image-card">
+                <img src="mem2.jpeg" alt="Me and My Sister">
+                <p class="image-caption">"At the family wedding, we danced together with pure joy, laughing and making unforgettable memories with every step."</p>
+            </div>
+            <div class="image-card">
+                <img src="mem3 (2).jpeg" alt="Me and My Sister">
+                <p class="image-caption">"A beautiful moment as we waited for the train together in the heart of the national park, surrounded by nature and laughter."</p>
+            </div>
+        </div>
+
+        <div class="paragraph-section">
+            <p class="story-paragraph" >It was one of those rare afternoons where time seemed to slow down just for us. The sun was shining brightly, but the breeze made it perfect for an outdoor adventure. My sister and I decided to head to the park, a place we hadn’t visited in years but held countless childhood memories. We walked together, reminiscing about our younger days, laughing about the silly games we used to play. The air was filled with nostalgia, and we couldn’t help but smile at the innocence of those simpler times.</p>
+            <p class="story-paragraph" >When we reached the park, we spotted the old swings where we had spent hours as kids, competing to see who could swing the highest. Naturally, we couldn't resist trying it out again. There we were, two grown adults, giggling like children as we tried to outdo each other. It was as if the years had melted away, and for a brief moment, we were the carefree siblings who only cared about fun. I remember her laughing so hard that she could barely hold on to the swing, and that infectious laughter made me laugh just as hard.</p>
+            <p class="story-paragraph" >After we had our fill of swings and running around, we sat on the grass, lying back to watch the clouds drift by. We talked about everything—our dreams, our worries, our shared secrets. It was one of those conversations where no topic was off-limits, and we could just be ourselves without judgment. As the sky began to turn a soft pink with the setting sun, I realized how lucky I was to have her not only as my sister but as my best friend. That day wasn’t about doing anything extraordinary—it was about being together, laughing, and making memories, the kind that would stay with us for a lifetime.</p>
+        </div>
+
+        <button><a href="Birthday.html">Go to back</a></button>
+    </div>
+</body>
+<script>
+// Parallax Background Movement based on mouse position
+const backgroundEffect = document.querySelector('.background-effect');
+document.addEventListener('mousemove', (e) => {
+    let moveX = (e.clientX / window.innerWidth) * 10 - 5;
+    let moveY = (e.clientY / window.innerHeight) * 10 - 5;
+    backgroundEffect.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+</script>
+</html>
